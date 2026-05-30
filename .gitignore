@@ -1,0 +1,103 @@
+# ############################################################################
+# .gitignore for the Atomic Graph Agentic Journal                            #
+# Stack: Python 3.14, uv, Google ADK, Antigravity                            #
+# ############################################################################
+
+
+# ==== Data files: the journal itself ====
+data/
+*.db
+*.db-journal
+*.sqlite
+*.sqlite-journal
+*.duckdb
+*.lance/
+*.chroma/
+journal-*.jsonl
+
+# ==== ADK & agent runtime artifacts ====
+.adk/
+adk_cache/
+*.session.json
+# local DatabaseSessionService output
+sessions.db
+
+# ==== Antigravity Agent-IDE artifacts: KEEP workflows & skills, IGNORE caches ====
+.agent/cache/
+.agent/tmp/
+.agent/logs/
+.agent/artifacts/
+# (.agent/workflows/ and .agent/skills/ are NOT ignored; Antigravity needs them)
+
+# ==== Generic / cross-project junk ====
+*.log
+*.bak
+*.tmp
+
+# ==== Secrets / credentials ====
+.env
+.env.*
+#...but let the committed template through:
+!.env.example
+*.key
+*.pem
+service-account*.json
+credentials.json
+secrets.json
+credentials/
+
+# ==== Python ====
+# ---- Byte-compilation & C-extension output ----
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+# ---- Build / packaging artifacts ----
+build/
+dist/
+develop-eggs/
+downloads/
+eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+.installed.cfg
+# ---- Legacy packaging artifacts ----
+*.egg-info/
+.eggs/
+*.egg
+MANIFEST
+# ---- Virtual environments (For safety) ----
+.venv/
+venv/
+ENV/
+# ---- Tooling caches ----
+.pytest_cache/
+.pytest_
+.ruff_cache/
+.tox/
+.nox/
+# ---- Coverage ----
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+.hypothesis/
+
+# ==== uv (Python package manager) ====
+# uv.lock SHOULD be committed (reproducible installs). The cache should not be,
+# but uv's cache defaults to ~/.cache/uv (outside the repo). We ignore a local
+# cache directory just in case UV_CACHE_DIR is set locally.
+.uv-cache/
+
+
+# ############################################################################
+# (Personal notes; will break into dedicated repos as projects mature.)      #
+# ############################################################################
+personal+other/
+# For all git configurations on my machine, ~/.gitignore_global handles OS & IDE junk
