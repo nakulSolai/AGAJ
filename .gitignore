@@ -78,7 +78,6 @@ venv/
 ENV/
 # ---- Tooling caches ----
 .pytest_cache/
-.pytest_
 .ruff_cache/
 .tox/
 .nox/
